@@ -14,6 +14,10 @@
 		483A59BE27F73D2700FFCB6C /* NotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483A59BD27F73D2700FFCB6C /* NotesViewController.swift */; };
 		483A59C327F73E4400FFCB6C /* NoteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483A59C227F73E4400FFCB6C /* NoteCell.swift */; };
 		483A59C727F7401300FFCB6C /* NoteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483A59C627F7401300FFCB6C /* NoteModel.swift */; };
+		483A59CC27F7425E00FFCB6C /* NotesWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483A59CB27F7425E00FFCB6C /* NotesWorker.swift */; };
+		483A59CF27F7441300FFCB6C /* NotesInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483A59CE27F7441300FFCB6C /* NotesInteractor.swift */; };
+		483A59D227F7441C00FFCB6C /* NotesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483A59D127F7441C00FFCB6C /* NotesPresenter.swift */; };
+		483A59D527F745BD00FFCB6C /* NotesAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483A59D427F745BD00FFCB6C /* NotesAssembly.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +30,10 @@
 		483A59BD27F73D2700FFCB6C /* NotesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesViewController.swift; sourceTree = "<group>"; };
 		483A59C227F73E4400FFCB6C /* NoteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteCell.swift; sourceTree = "<group>"; };
 		483A59C627F7401300FFCB6C /* NoteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteModel.swift; sourceTree = "<group>"; };
+		483A59CB27F7425E00FFCB6C /* NotesWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesWorker.swift; sourceTree = "<group>"; };
+		483A59CE27F7441300FFCB6C /* NotesInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesInteractor.swift; sourceTree = "<group>"; };
+		483A59D127F7441C00FFCB6C /* NotesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesPresenter.swift; sourceTree = "<group>"; };
+		483A59D427F745BD00FFCB6C /* NotesAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesAssembly.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +66,7 @@
 		483A59A527F73BF800FFCB6C /* Notes */ = {
 			isa = PBXGroup;
 			children = (
+				483A59CA27F7424300FFCB6C /* NotesWorker */,
 				483A59A627F73BF800FFCB6C /* AppDelegate.swift */,
 				483A59A827F73BF800FFCB6C /* SceneDelegate.swift */,
 				483A59BC27F73D0E00FFCB6C /* NotesScene */,
@@ -71,11 +80,22 @@
 		483A59BC27F73D0E00FFCB6C /* NotesScene */ = {
 			isa = PBXGroup;
 			children = (
-				483A59C627F7401300FFCB6C /* NoteModel.swift */,
 				483A59C227F73E4400FFCB6C /* NoteCell.swift */,
 				483A59BD27F73D2700FFCB6C /* NotesViewController.swift */,
+				483A59CE27F7441300FFCB6C /* NotesInteractor.swift */,
+				483A59D127F7441C00FFCB6C /* NotesPresenter.swift */,
+				483A59D427F745BD00FFCB6C /* NotesAssembly.swift */,
 			);
 			path = NotesScene;
+			sourceTree = "<group>";
+		};
+		483A59CA27F7424300FFCB6C /* NotesWorker */ = {
+			isa = PBXGroup;
+			children = (
+				483A59C627F7401300FFCB6C /* NoteModel.swift */,
+				483A59CB27F7425E00FFCB6C /* NotesWorker.swift */,
+			);
+			path = NotesWorker;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -147,8 +167,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				483A59D227F7441C00FFCB6C /* NotesPresenter.swift in Sources */,
 				483A59C727F7401300FFCB6C /* NoteModel.swift in Sources */,
+				483A59CC27F7425E00FFCB6C /* NotesWorker.swift in Sources */,
+				483A59CF27F7441300FFCB6C /* NotesInteractor.swift in Sources */,
 				483A59BE27F73D2700FFCB6C /* NotesViewController.swift in Sources */,
+				483A59D527F745BD00FFCB6C /* NotesAssembly.swift in Sources */,
 				483A59A727F73BF800FFCB6C /* AppDelegate.swift in Sources */,
 				483A59A927F73BF800FFCB6C /* SceneDelegate.swift in Sources */,
 				483A59C327F73E4400FFCB6C /* NoteCell.swift in Sources */,

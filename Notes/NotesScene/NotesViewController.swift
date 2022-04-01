@@ -8,13 +8,28 @@
 import Foundation
 import UIKit
 
+protocol NotesDisplayLogic: AnyObject {
+    func displayNotes(_ notes: [NoteModel])
+}
+
 class NotesViewController: UIViewController {
-    let tableView = UITableView()
+    public var interactor: NotesBusinessLogic!
+    private let tableView = UITableView()
+    private var notes: [NoteModel] = [] {
+        didSet {
+            tableView.reloadData()
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
         setupTableView()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        interactor.fetchNotes()
     }
     
     private func setupTableView() {
@@ -35,19 +50,24 @@ class NotesViewController: UIViewController {
 
 }
 
+// MARK: UITableViewDelegate & DataSource implementation.
 extension NotesViewController: UITableViewDelegate { }
 
 extension NotesViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        3
+        notes.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(
             withIdentifier: NoteCell.reuseIdentifier, for: indexPath) as? NoteCell
-        cell?.setup(note: NoteModel(title: "Title", filling: "Filling"))
+        cell?.setup(note: notes[indexPath.row])
         return cell ?? UITableViewCell()
     }
-    
-    
+}
+
+extension NotesViewController: NotesDisplayLogic {
+    func displayNotes(_ notes: [NoteModel]) {
+        self.notes = notes
+    }
 }

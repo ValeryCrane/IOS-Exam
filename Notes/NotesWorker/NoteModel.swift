@@ -8,6 +8,7 @@
 import Foundation
 
 struct NoteModel {
+    var id = UUID()
     var title: String
     var filling: String
 }
