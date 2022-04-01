@@ -9,6 +9,7 @@ import Foundation
 
 protocol NotesBusinessLogic: AnyObject {
     func fetchNotes()
+    func deleteNote(_ note: NoteModel)
 }
 
 class NotesInteractor {
@@ -20,6 +21,10 @@ extension NotesInteractor: NotesBusinessLogic {
     func fetchNotes() {
         let notes = notesWorker.getNotes()
         presenter.presentNotes(notes)
+    }
+    
+    func deleteNote(_ note: NoteModel) {
+        notesWorker.remove(note: note)
     }
 }
 

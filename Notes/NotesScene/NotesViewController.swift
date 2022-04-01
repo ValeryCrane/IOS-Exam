@@ -15,11 +15,7 @@ protocol NotesDisplayLogic: AnyObject {
 class NotesViewController: UIViewController {
     public var interactor: NotesBusinessLogic!
     private let tableView = UITableView()
-    private var notes: [NoteModel] = [] {
-        didSet {
-            tableView.reloadData()
-        }
-    }
+    private var notes: [NoteModel] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,7 +47,21 @@ class NotesViewController: UIViewController {
 }
 
 // MARK: UITableViewDelegate & DataSource implementation.
-extension NotesViewController: UITableViewDelegate { }
+extension NotesViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let deleteAction = UIContextualAction(style: .destructive, title: "Delete") { [weak self] action, view, completionHandler in
+            
+            guard let notes = self?.notes else { completionHandler(true); return }
+            
+            self?.interactor?.deleteNote(notes[indexPath.row])
+            self?.notes.remove(at: indexPath.row)
+            self?.tableView.deleteRows(at: [indexPath], with: .automatic)
+            completionHandler(true)
+        }
+        
+        return UISwipeActionsConfiguration(actions: [deleteAction])
+    }
+}
 
 extension NotesViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -69,5 +79,6 @@ extension NotesViewController: UITableViewDataSource {
 extension NotesViewController: NotesDisplayLogic {
     func displayNotes(_ notes: [NoteModel]) {
         self.notes = notes
+        tableView.reloadData()
     }
 }

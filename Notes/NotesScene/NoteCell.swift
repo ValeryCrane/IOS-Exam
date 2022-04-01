@@ -31,6 +31,9 @@ class NoteCell: UITableViewCell {
         title.translatesAutoresizingMaskIntoConstraints = false
         filling.translatesAutoresizingMaskIntoConstraints = false
         
+        let bottomConstraint = filling.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -8)
+        bottomConstraint.priority = UILayoutPriority(999)
+        
         NSLayoutConstraint.activate([
             title.topAnchor.constraint(equalTo: self.topAnchor, constant: 8),
             title.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 8),
@@ -39,8 +42,10 @@ class NoteCell: UITableViewCell {
             filling.topAnchor.constraint(equalTo: title.bottomAnchor, constant: 8),
             filling.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 8),
             filling.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -8),
-            filling.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -8)
+            bottomConstraint
         ])
+        
+        
     }
     
     required init?(coder: NSCoder) {
