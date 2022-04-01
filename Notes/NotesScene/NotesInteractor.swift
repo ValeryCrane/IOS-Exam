@@ -8,8 +8,8 @@
 import Foundation
 
 protocol NotesBusinessLogic: AnyObject {
-    func fetchNotes()
-    func deleteNote(_ note: NoteModel)
+    func fetchNotes()                           // Fetches notes from NoteWorker.
+    func deleteNote(_ note: NoteModel)          // Deletes notes from NoteWorker.
 }
 
 class NotesInteractor {
@@ -17,6 +17,7 @@ class NotesInteractor {
     private let notesWorker = NotesWorker.shared
 }
 
+// MARK: - NotesBusinessLogic implementation.
 extension NotesInteractor: NotesBusinessLogic {
     func fetchNotes() {
         let notes = notesWorker.getNotes()

@@ -12,6 +12,7 @@ class NotesWorker {
     static let shared = NotesWorker()
     private init() { }
     
+    // MARK: - CoreData configuration.
     private let context: NSManagedObjectContext = {
         let container = NSPersistentContainer(name: "NotesCoreData")
         container.loadPersistentStores { _, error in
@@ -28,6 +29,7 @@ class NotesWorker {
         }
     }
     
+    // MARK: - actions.
     func add(note: NoteModel) {
         let coreNote = Note(context: context)
         coreNote.id = note.id

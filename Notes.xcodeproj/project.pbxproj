@@ -44,6 +44,7 @@
 		483A59E327F751FB00FFCB6C /* NotesCoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = NotesCoreData.xcdatamodel; sourceTree = "<group>"; };
 		483A59E627F7528300FFCB6C /* Note+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Note+CoreDataClass.swift"; sourceTree = "<group>"; };
 		483A59E727F7528300FFCB6C /* Note+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Note+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		483A59EC27F7561A00FFCB6C /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +61,7 @@
 		483A599A27F73BF800FFCB6C = {
 			isa = PBXGroup;
 			children = (
+				483A59EC27F7561A00FFCB6C /* README.md */,
 				483A59A527F73BF800FFCB6C /* Notes */,
 				483A59A427F73BF800FFCB6C /* Products */,
 			);
@@ -80,8 +82,8 @@
 				483A59A827F73BF800FFCB6C /* SceneDelegate.swift */,
 				483A59E127F751DB00FFCB6C /* CoreData */,
 				483A59CA27F7424300FFCB6C /* NotesWorker */,
-				483A59D727F74B1B00FFCB6C /* CreateNoteScene */,
 				483A59BC27F73D0E00FFCB6C /* NotesScene */,
+				483A59D727F74B1B00FFCB6C /* CreateNoteScene */,
 				483A59AF27F73BF900FFCB6C /* Assets.xcassets */,
 				483A59B127F73BF900FFCB6C /* LaunchScreen.storyboard */,
 				483A59B427F73BF900FFCB6C /* Info.plist */,

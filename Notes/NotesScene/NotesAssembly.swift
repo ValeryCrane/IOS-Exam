@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 
+// Assembles NotesScene.
 class NotesAssembly {
     private init() { }
     static func assemble() -> UIViewController {

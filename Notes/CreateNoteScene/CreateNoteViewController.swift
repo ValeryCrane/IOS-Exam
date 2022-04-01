@@ -13,6 +13,7 @@ class CreateNoteViewController: UIViewController {
     private let titleField = UITextField()
     private let fillingView = UITextView()
     
+    // MARK: - ViewController's life cycle.
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
@@ -21,6 +22,7 @@ class CreateNoteViewController: UIViewController {
         setupNavigationBar()
     }
     
+    // MARK: - setup functions.
     private func setupLayout() {
         titleField.placeholder = "Title"
         titleField.font = .systemFont(ofSize: 32, weight: .bold)
@@ -49,6 +51,7 @@ class CreateNoteViewController: UIViewController {
             title: "Done", style: .done, target: self, action: #selector(addNote))
     }
     
+    // MARK: - actions.
     @objc private func addNote() {
         if let title = titleField.text, !title.isEmpty {
             let filling = fillingView.text ?? ""

@@ -8,13 +8,14 @@
 import Foundation
 
 protocol NotesPresentationLogic: AnyObject {
-    func presentNotes(_ notes: [NoteModel])
+    func presentNotes(_ notes: [NoteModel])         // Presents notes in view.
 }
 
 class NotesPresenter {
     public weak var view: NotesDisplayLogic!
 }
 
+// MARK: - NotesPresentationLogic implementation.
 extension NotesPresenter: NotesPresentationLogic {
     func presentNotes(_ notes: [NoteModel]) {
         view.displayNotes(notes)

@@ -18,6 +18,7 @@ class NotesViewController: UIViewController {
     private let tableView = UITableView()
     private var notes: [NoteModel] = []
 
+    // MARK: - ViewController's life cycle.
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
@@ -31,6 +32,7 @@ class NotesViewController: UIViewController {
         interactor.fetchNotes()
     }
     
+    // MARK: - setup functions.
     private func setupTableView() {
         tableView.dataSource = self
         tableView.delegate = self
@@ -52,14 +54,18 @@ class NotesViewController: UIViewController {
             barButtonSystemItem: .add, target: self, action: #selector(openCreateNoteScene))
     }
     
+    
+    // MARK: - actions.
     @objc private func openCreateNoteScene() {
         router.routeToCreateNote()
     }
 
 }
 
-// MARK: UITableViewDelegate & DataSource implementation.
+// MARK: - UITableViewDelegate & DataSource implementation.
 extension NotesViewController: UITableViewDelegate {
+    
+    // So to enable delte action.
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let deleteAction = UIContextualAction(style: .destructive, title: "Delete") { [weak self] action, view, completionHandler in
             
@@ -93,7 +99,7 @@ extension NotesViewController: UITableViewDataSource {
 }
 
 
-// MARK: NotesDisplayLogic implementation
+// MARK: - NotesDisplayLogic implementation.
 extension NotesViewController: NotesDisplayLogic {
     func displayNotes(_ notes: [NoteModel]) {
         self.notes = notes

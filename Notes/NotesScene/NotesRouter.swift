@@ -9,13 +9,14 @@ import Foundation
 import UIKit
 
 protocol NotesRoutingLogic {
-    func routeToCreateNote()
+    func routeToCreateNote()            // Routes to menu of creating new note.
 }
 
 class NotesRouter {
     public weak var view: UIViewController!
 }
 
+// MARK: - NotesRoutingLogic implementation.
 extension NotesRouter: NotesRoutingLogic {
     func routeToCreateNote() {
         view.navigationController?.pushViewController(

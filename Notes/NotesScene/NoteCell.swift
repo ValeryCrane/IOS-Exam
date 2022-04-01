@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 
+// Class of single note cell in tableView.
 class NoteCell: UITableViewCell {
     static let reuseIdentifier = "NoteCell"
     private let title = UILabel()
