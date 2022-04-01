@@ -16,11 +16,12 @@ class CreateNoteViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-        configureLayout()
-        configureNavigationBar()
+        title = "Create note"
+        setupLayout()
+        setupNavigationBar()
     }
     
-    private func configureLayout() {
+    private func setupLayout() {
         titleField.placeholder = "Title"
         titleField.font = .systemFont(ofSize: 32, weight: .bold)
         fillingView.isEditable = true
@@ -34,16 +35,16 @@ class CreateNoteViewController: UIViewController {
         NSLayoutConstraint.activate([
             titleField.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 8),
             titleField.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 16),
-            titleField.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: 16),
+            titleField.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -16),
             
             fillingView.topAnchor.constraint(equalTo: titleField.bottomAnchor),
             fillingView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 8),
-            fillingView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: 8),
-            fillingView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: 8)
+            fillingView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -8),
+            fillingView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -8)
         ])
     }
     
-    private func configureNavigationBar() {
+    private func setupNavigationBar() {
         navigationItem.rightBarButtonItem = UIBarButtonItem(
             title: "Done", style: .done, target: self, action: #selector(addNote))
     }

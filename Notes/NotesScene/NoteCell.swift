@@ -24,7 +24,7 @@ class NoteCell: UITableViewCell {
         title.font = .systemFont(ofSize: 24, weight: .bold)
         filling.font = .systemFont(ofSize: 16, weight: .light)
         title.numberOfLines = 1
-        filling.numberOfLines = 3
+        filling.numberOfLines = 0
         
         self.addSubview(title)
         self.addSubview(filling)

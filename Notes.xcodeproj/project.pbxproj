@@ -19,6 +19,7 @@
 		483A59D227F7441C00FFCB6C /* NotesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483A59D127F7441C00FFCB6C /* NotesPresenter.swift */; };
 		483A59D527F745BD00FFCB6C /* NotesAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483A59D427F745BD00FFCB6C /* NotesAssembly.swift */; };
 		483A59D927F74B4100FFCB6C /* CreateNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483A59D827F74B4100FFCB6C /* CreateNoteViewController.swift */; };
+		483A59DE27F74F2C00FFCB6C /* NotesRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483A59DD27F74F2C00FFCB6C /* NotesRouter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		483A59D127F7441C00FFCB6C /* NotesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesPresenter.swift; sourceTree = "<group>"; };
 		483A59D427F745BD00FFCB6C /* NotesAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesAssembly.swift; sourceTree = "<group>"; };
 		483A59D827F74B4100FFCB6C /* CreateNoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNoteViewController.swift; sourceTree = "<group>"; };
+		483A59DD27F74F2C00FFCB6C /* NotesRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesRouter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +89,7 @@
 				483A59BD27F73D2700FFCB6C /* NotesViewController.swift */,
 				483A59CE27F7441300FFCB6C /* NotesInteractor.swift */,
 				483A59D127F7441C00FFCB6C /* NotesPresenter.swift */,
+				483A59DD27F74F2C00FFCB6C /* NotesRouter.swift */,
 				483A59D427F745BD00FFCB6C /* NotesAssembly.swift */,
 			);
 			path = NotesScene;
@@ -185,6 +188,7 @@
 				483A59BE27F73D2700FFCB6C /* NotesViewController.swift in Sources */,
 				483A59D527F745BD00FFCB6C /* NotesAssembly.swift in Sources */,
 				483A59A727F73BF800FFCB6C /* AppDelegate.swift in Sources */,
+				483A59DE27F74F2C00FFCB6C /* NotesRouter.swift in Sources */,
 				483A59A927F73BF800FFCB6C /* SceneDelegate.swift in Sources */,
 				483A59D927F74B4100FFCB6C /* CreateNoteViewController.swift in Sources */,
 				483A59C327F73E4400FFCB6C /* NoteCell.swift in Sources */,

@@ -14,13 +14,16 @@ protocol NotesDisplayLogic: AnyObject {
 
 class NotesViewController: UIViewController {
     public var interactor: NotesBusinessLogic!
+    public var router: NotesRoutingLogic!
     private let tableView = UITableView()
     private var notes: [NoteModel] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
+        title = "Notes"
         setupTableView()
+        setupNavigationBar()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -43,6 +46,15 @@ class NotesViewController: UIViewController {
             tableView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor)
         ])
     }
+    
+    private func setupNavigationBar() {
+        navigationItem.rightBarButtonItem = UIBarButtonItem(
+            barButtonSystemItem: .add, target: self, action: #selector(openCreateNoteScene))
+    }
+    
+    @objc private func openCreateNoteScene() {
+        router.routeToCreateNote()
+    }
 
 }
 
@@ -61,6 +73,10 @@ extension NotesViewController: UITableViewDelegate {
         
         return UISwipeActionsConfiguration(actions: [deleteAction])
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
 }
 
 extension NotesViewController: UITableViewDataSource {
@@ -76,6 +92,8 @@ extension NotesViewController: UITableViewDataSource {
     }
 }
 
+
+// MARK: NotesDisplayLogic implementation
 extension NotesViewController: NotesDisplayLogic {
     func displayNotes(_ notes: [NoteModel]) {
         self.notes = notes

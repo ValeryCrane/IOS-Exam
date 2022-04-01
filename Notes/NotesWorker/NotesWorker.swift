@@ -11,9 +11,7 @@ class NotesWorker {
     static let shared = NotesWorker()
     private init() { }
     
-    private var notes: [NoteModel] = [NoteModel(title: "Title", filling: "Filling"),
-                                      NoteModel(title: "Title", filling: "Filling"),
-                                      NoteModel(title: "Title", filling: "Filling")]
+    private var notes: [NoteModel] = []
     
     func add(note: NoteModel) {
         notes.insert(note, at: 0)

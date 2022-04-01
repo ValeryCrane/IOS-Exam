@@ -14,10 +14,13 @@ class NotesAssembly {
         let view = NotesViewController()
         let interactor = NotesInteractor()
         let presenter = NotesPresenter()
+        let router = NotesRouter()
         
         view.interactor = interactor
         interactor.presenter = presenter
         presenter.view = view
+        router.view = view
+        view.router = router
         
         return view
     }
