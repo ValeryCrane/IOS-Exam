@@ -9,19 +9,23 @@
 /* Begin PBXBuildFile section */
 		483A59A727F73BF800FFCB6C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483A59A627F73BF800FFCB6C /* AppDelegate.swift */; };
 		483A59A927F73BF800FFCB6C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483A59A827F73BF800FFCB6C /* SceneDelegate.swift */; };
-		483A59AB27F73BF800FFCB6C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483A59AA27F73BF800FFCB6C /* ViewController.swift */; };
 		483A59B027F73BF900FFCB6C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 483A59AF27F73BF900FFCB6C /* Assets.xcassets */; };
 		483A59B327F73BF900FFCB6C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 483A59B127F73BF900FFCB6C /* LaunchScreen.storyboard */; };
+		483A59BE27F73D2700FFCB6C /* NotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483A59BD27F73D2700FFCB6C /* NotesViewController.swift */; };
+		483A59C327F73E4400FFCB6C /* NoteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483A59C227F73E4400FFCB6C /* NoteCell.swift */; };
+		483A59C727F7401300FFCB6C /* NoteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483A59C627F7401300FFCB6C /* NoteModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		483A59A327F73BF800FFCB6C /* Notes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Notes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		483A59A627F73BF800FFCB6C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		483A59A827F73BF800FFCB6C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		483A59AA27F73BF800FFCB6C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		483A59AF27F73BF900FFCB6C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		483A59B227F73BF900FFCB6C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		483A59B427F73BF900FFCB6C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		483A59BD27F73D2700FFCB6C /* NotesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesViewController.swift; sourceTree = "<group>"; };
+		483A59C227F73E4400FFCB6C /* NoteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteCell.swift; sourceTree = "<group>"; };
+		483A59C627F7401300FFCB6C /* NoteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,12 +60,22 @@
 			children = (
 				483A59A627F73BF800FFCB6C /* AppDelegate.swift */,
 				483A59A827F73BF800FFCB6C /* SceneDelegate.swift */,
-				483A59AA27F73BF800FFCB6C /* ViewController.swift */,
+				483A59BC27F73D0E00FFCB6C /* NotesScene */,
 				483A59AF27F73BF900FFCB6C /* Assets.xcassets */,
 				483A59B127F73BF900FFCB6C /* LaunchScreen.storyboard */,
 				483A59B427F73BF900FFCB6C /* Info.plist */,
 			);
 			path = Notes;
+			sourceTree = "<group>";
+		};
+		483A59BC27F73D0E00FFCB6C /* NotesScene */ = {
+			isa = PBXGroup;
+			children = (
+				483A59C627F7401300FFCB6C /* NoteModel.swift */,
+				483A59C227F73E4400FFCB6C /* NoteCell.swift */,
+				483A59BD27F73D2700FFCB6C /* NotesViewController.swift */,
+			);
+			path = NotesScene;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -133,9 +147,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				483A59AB27F73BF800FFCB6C /* ViewController.swift in Sources */,
+				483A59C727F7401300FFCB6C /* NoteModel.swift in Sources */,
+				483A59BE27F73D2700FFCB6C /* NotesViewController.swift in Sources */,
 				483A59A727F73BF800FFCB6C /* AppDelegate.swift in Sources */,
 				483A59A927F73BF800FFCB6C /* SceneDelegate.swift in Sources */,
+				483A59C327F73E4400FFCB6C /* NoteCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
